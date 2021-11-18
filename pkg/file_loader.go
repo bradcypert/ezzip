@@ -11,7 +11,6 @@ func loadFiles(d string) ([]string, error) {
 	var files []string
 
 	walker := func(path string, dir os.DirEntry, err error) error {
-		fmt.Printf("Crawling: %#v\n", path)
 		if err != nil {
 			return err
 		}
