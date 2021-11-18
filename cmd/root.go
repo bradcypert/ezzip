@@ -36,24 +36,20 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(args)
 
 		// TODO: What causes this to error?
 		encrypt, _ := cmd.Flags().GetBool("encrypt")
 		key, _ := cmd.Flags().GetString("key")
 
-		if encrypt {
-			fmt.Println("We are encrypting")
-		}
 		if strings.HasSuffix(args[0], "zip") {
 			pkg.UnzipAssets(args[0], key)
-			fmt.Println("Successfully unzipped:" + args[0])
+			fmt.Println("Successfully unzipped: " + args[0])
 		} else {
 			key, _ := pkg.ZipAssets(args[0], encrypt)
-			fmt.Println("Output:" + args[0] + ".zip")
+			fmt.Println("Output: " + args[0] + ".zip")
 
 			if key != nil {
-				fmt.Println("Use key:" + *key + " to decrypt")
+				fmt.Println("Use key: " + *key + " to decrypt")
 
 			}
 		}

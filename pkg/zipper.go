@@ -2,7 +2,6 @@ package pkg
 
 import (
 	"archive/zip"
-	"fmt"
 	"io/ioutil"
 	"os"
 	"path"
@@ -34,8 +33,6 @@ func ZipAssets(directoryPath string, shouldEncrypt bool) (*string, error) {
 		if err != nil {
 			return nil, err
 		}
-
-		fmt.Println(shouldEncrypt)
 
 		if shouldEncrypt {
 			key, err = encrypt(&contents)
