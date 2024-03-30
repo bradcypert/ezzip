@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -50,7 +50,7 @@ var rootCmd = &cobra.Command{
 		encrypt, _ := cmd.Flags().GetBool("encrypt")
 		key, _ := cmd.Flags().GetString("key")
 
-		if strings.HasSuffix(args[0], "zip") {
+		if strings.HasSuffix(args[0], ".zip") {
 			pkg.UnzipAssets(args[0], key)
 			fmt.Println("Successfully unzipped: " + args[0])
 		} else {
